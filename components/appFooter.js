@@ -1,12 +1,29 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { Component } from 'react';
+import {
+    Container,
+    Header,
+    Title,
+    Content,
+    Footer,
+    FooterTab,
+    Button,
+    Left,
+    Right,
+    Body,
+    Icon,
+    Text
+} from 'native-base';
 
 export default class appFooter extends Component {
     render() {
         return (
-            <View>
-                <Text>Footer</Text>
-            </View>
+            <Footer>
+                <FooterTab>
+                    <Button full>
+                        <Text>Footer</Text>
+                    </Button>
+                </FooterTab>
+            </Footer>
         );
     }
 }

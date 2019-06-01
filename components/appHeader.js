@@ -1,29 +1,45 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
     Container,
     Header,
     Title,
+    Content,
+    Footer,
+    FooterTab,
     Button,
     Left,
     Right,
     Body,
-    Icon
-} from "native-base";
+    Icon,
+    Text
+} from 'native-base';
+import { connect } from 'react-redux';
 
-export default class appHeader extends Component {
+class appHeader extends Component {
     render() {
         return (
             <Header>
                 <Left>
                     <Button transparent>
-                        <Icon name="arrow-up" />
+                        <Icon name='menu' />
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Header</Title>
+                    <Title>UPresent</Title>
                 </Body>
-                <Right />
+                <Right>
+                    {/* {<Icon type='FontAwesome' name='sheqel' />} */}
+                    <Text style={{ fontSize: 25, color: 'red' }}>
+                        {this.props.count}
+                    </Text>
+                </Right>
             </Header>
         );
     }
 }
+mapStateToProps = state => {
+    return {
+        count: state.count
+    };
+};
+export default connect(mapStateToProps)(appHeader);
